@@ -25,6 +25,7 @@ steps:
     commands:
       - kubectl version
 
+
 #    deploy:
 #      title: Updating k8s deployment
 #      image: gcr.io/gs-public/kubectl
