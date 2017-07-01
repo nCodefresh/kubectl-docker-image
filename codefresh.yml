@@ -17,7 +17,7 @@ steps:
     image: ncodefresh/kubectl:latest
     working-directory: IMAGE_WORK_DIR
     environment:
-      GOOGLE_SERVICE_ACCOUNT: test-account
+      - GOOGLE_SERVICE_ACCOUNT=test-account
     commands:
       - kubectl version
 
