@@ -19,7 +19,7 @@ steps:
     environment:
       - GOOGLE_SERVICE_ACCOUNT=test-account
     commands:
-      - /etrypoint
+      - /entrypoint.sh
       - kubectl version
 
 #    deploy:
