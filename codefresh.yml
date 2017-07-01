@@ -1,0 +1,8 @@
+version: '1.0'
+steps:
+    deploy-to-kubernetes:
+      title: lets try kubectl
+      image: ncodefresh/kubectl:latest
+      working-directory: IMAGE_WORK_DIR
+      commands:
+        - 'kubectl'
