@@ -22,8 +22,8 @@ steps:
       - sh
       - -c
       - /entrypoint.sh
-    commands:
-      - kubectl version
+#    commands:
+#      - kubectl version
 
 #    deploy:
 #      title: Updating k8s deployment
