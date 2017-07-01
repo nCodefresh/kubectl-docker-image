@@ -1,8 +1,37 @@
 version: '1.0'
 steps:
-    deploy-to-kubernetes:
-      title: lets try kubectl
-      image: ncodefresh/kubectl:latest
-      working-directory: IMAGE_WORK_DIR
-      commands:
-        - 'kubectl'
+#  build_image:
+#    type: build
+#    dockerfile: Dockerfile
+#    image_name: ncodefresh/kubectl
+#    tag: latest
+#
+#  push_step:
+#    type: push
+#    candidate: ${{build_image}}
+#    tag: latest
+#    registry: dockerhub-release
+
+  deploy-to-kubernetes:
+    title: lets try kubectl
+    image: ncodefresh/kubectl:latest
+    working-directory: IMAGE_WORK_DIR
+    environment:
+      GOOGLE_SERVICE_ACCOUNT: test-account
+    commands:
+      - kubectl version
+
+#    deploy:
+#      title: Updating k8s deployment
+#      image: gcr.io/gs-public/kubectl
+#      environment:
+#        - CLOUDSDK_CORE_PROJECT=global-scanning-dev
+#        - CLOUDSDK_COMPUTE_ZONE=europe-west1-b
+#        - K8S_CLUSTER=ns-1
+#      working_directory: IMAGE_WORK_DIR
+#      entry_point:
+#        - /entrypoint.sh
+#      commands:
+#        - 'ls /'
+#        - 'cat /root/.kube/config'
+#        - 'kubectl get pods'
