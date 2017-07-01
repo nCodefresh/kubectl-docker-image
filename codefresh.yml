@@ -18,6 +18,10 @@ steps:
     working-directory: IMAGE_WORK_DIR
     environment:
       - GOOGLE_SERVICE_ACCOUNT=test-account
+    entry_point:
+      - sh
+      - -c
+      - /entrypoint.sh
     commands:
       - kubectl version
 
